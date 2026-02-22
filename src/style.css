@@ -1,0 +1,52 @@
+body{
+    background-color: palegoldenrod;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont{
+    width: 350px;
+    background-color: antiquewhite;
+    text-align: center;
+    border-radius: 20px;
+    height: 400px;
+}
+
+button{
+    border: none;
+    border-radius: 5px;
+    color:green;
+    background-color: white;
+    padding: 0.25rem;
+    transition: 0.6s;
+}
+
+input[type="text"]{
+    border-radius: 0.25rem;
+    border: none;
+    margin: 0.5rem 1rem;
+    padding: 0.2rem;
+    text-align: center;
+}
+
+input[type="text"]:focus{
+    outline: none;
+}
+
+li{
+    list-style: none;
+    text-align: center;
+}
+
+li span{
+    display: inline-block;
+    width: 95px;
+    margin: 0.5rem;
+}
+
+button:hover{
+    background-color: gray;
+    color: white;
+}
