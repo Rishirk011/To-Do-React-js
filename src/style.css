@@ -12,6 +12,7 @@ body{
     text-align: center;
     border-radius: 20px;
     height: 400px;
+    box-shadow: 2px 2px 7px;
 }
 
 button{
@@ -35,15 +36,23 @@ input[type="text"]:focus{
     outline: none;
 }
 
+input[type="checkbox"]:checked + label{
+    text-decoration: line-through;
+}
+
 li{
     list-style: none;
     text-align: center;
 }
 
-li span{
+li label{
     display: inline-block;
     width: 95px;
     margin: 0.5rem;
+}
+
+li button{
+    margin: 0 0.45rem;
 }
 
 button:hover{

@@ -2,8 +2,6 @@ import { useState } from "react";
 import './style.css'
 function Imp(){
 
-    let timeFn=new Date();
-    //let time=String(`${timeFn.getHours()}:${timeFn.getMinutes()}:${timeFn.getSeconds()}`);
     let time=new Date().toLocaleTimeString(); 
    
     
@@ -16,8 +14,6 @@ function Imp(){
 
     let [task,setTask]=useState("");
 
-
-
     let addTask=()=>{
 
         if(task!==""){
@@ -29,15 +25,20 @@ function Imp(){
         }
         setTask("");
 
-        
     }
 
     let remove=(index)=>{
-
-       
-
+        
         setList(list.filter((temp,ind)=>
             ind!==index
+        ));
+
+    }
+
+      let strike=(index)=>{
+
+        setList(list.filter((temp,ind)=>
+            ind!==index?list.style.textDecoration="line-through":i
         ));
 
     }
@@ -61,9 +62,15 @@ function Imp(){
 
                 <li key={index}>
 
-                    <input type="checkbox"/>
+                    <input type="checkbox"
+                    onClick={()=>strike(index)}
+                    id="task"
+                    />
                     
-                    <span className="task">{task}</span>
+                    <label className="task"
+                    htmlFor="task">
+                    {task}
+                    </label>
 
                     <span>{time}</span>
                     
