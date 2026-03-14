@@ -1,19 +1,25 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import './style.css'
 function Imp(){
 
     let time=new Date().toLocaleTimeString(); 
    
-    
-    let [list,setList]=useState([
+    let [list,setList]=useState(()=>{
+        let storedTasks=localStorage.getItem("items");
+        return storedTasks?JSON.parse(storedTasks):[];
+    })
 
-        {task:"reading",time:time},
-        {task:"sleeping",time:time}
-            
-    ])
+    useEffect(()=>{
+        let jsonTasks=JSON.stringify(list);
+        localStorage.setItem("items",jsonTasks);
+    },[list]);
+
+    useEffect(()=>{
+        
+    },[])
 
     let [task,setTask]=useState("");
-
+   
     let addTask=()=>{
 
         if(task!==""){
