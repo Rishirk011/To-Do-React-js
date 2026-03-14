@@ -14,10 +14,6 @@ function Imp(){
         localStorage.setItem("items",jsonTasks);
     },[list]);
 
-    useEffect(()=>{
-        
-    },[])
-
     let [task,setTask]=useState("");
    
     let addTask=()=>{
@@ -59,7 +55,9 @@ function Imp(){
 
             (event)=>setTask(event.target.value)
             
-            }/>
+            }
+        
+        />
         <button onClick={addTask}>add</button>
 
         {
